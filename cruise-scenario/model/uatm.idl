@@ -1,0 +1,127 @@
+#ifndef UATM_IDL
+#define UATM_IDL
+
+module UATM {
+  struct vehicleState;
+  struct tacticalCommand;
+  struct flightStatus;
+  struct airspaceAlert;
+  struct fleetDirectives;
+  struct weatherUpdate;
+  struct tolPadStatus;
+  struct trafficFlowsInfo;
+};
+module UATM {
+  enum directiveType {
+    ALTITUDE,
+    SPEED,
+    REROUTE,
+    HOLD
+  };
+};
+module UATM {
+  enum systemHealth {
+    NOMINAL,
+    DEGRADED,
+    CRITICAL
+  };
+};
+module UATM {
+  enum type {
+    TFR,
+    WEATHER,
+    OBSTACLE,
+    SECURITY
+  };
+};
+module UATM {
+  enum status {
+    FREE,
+    OCCUPIED,
+    RESERVED,
+    ERROR
+  };
+};
+module UATM {
+  typedef float FloatArray[3];
+};
+module UATM {
+
+#pragma DCPS_DATA_TYPE "UATM::vehicleState"
+  struct vehicleState {
+    string<20> vehicleId;
+    long double timestamp;
+    double latitude;
+    double logitude;
+    float altitude;
+    FloatArray velocity;
+  };
+};
+module UATM {
+
+#pragma DCPS_DATA_TYPE "UATM::tacticalCommand"
+  struct tacticalCommand {
+    string<20> targetVehicleId;
+    string<20> directiveType;
+    float targetValue;
+    short priority;
+    long commandId;
+  };
+};
+module UATM {
+
+#pragma DCPS_DATA_TYPE "UATM::flightStatus"
+  struct flightStatus {
+    string<20> vehicleId;
+    float batteryLife;
+    systemHealth systemHealth;
+    boolean redudancy;
+  };
+};
+module UATM {
+
+#pragma DCPS_DATA_TYPE "UATM::airspaceAlert"
+  struct airspaceAlert {
+    type type;
+    FloatArray affectedArea;
+    octet severity;
+    string<20> alertId;
+  };
+};
+module UATM {
+
+#pragma DCPS_DATA_TYPE "UATM::fleetDirectives"
+  struct fleetDirectives {
+    string<20> missionId;
+    string<20> instruction;
+    long double scheduleETA;
+  };
+};
+module UATM {
+
+#pragma DCPS_DATA_TYPE "UATM::weatherUpdate"
+  struct weatherUpdate {
+    string<20> stationId;
+    float windSpeed;
+    short windDirection;
+  };
+};
+module UATM {
+
+#pragma DCPS_DATA_TYPE "UATM::tolPadStatus"
+  struct tolPadStatus {
+    string<20> padId;
+    directiveType status;
+    long estimatedClear;
+  };
+};
+module UATM {
+
+#pragma DCPS_DATA_TYPE "UATM::trafficFlowsInfo"
+  struct trafficFlowsInfo {
+    string<20> sectorId;
+    float density;
+    float saturation;
+  };
+};
+#endif 

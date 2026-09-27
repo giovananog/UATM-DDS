@@ -1,0 +1,80 @@
+MIME-Version: 1.0
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----6F545C4D40FE23C919D49A1C8ECD454E"
+
+This is an S/MIME signed message
+
+------6F545C4D40FE23C919D49A1C8ECD454E
+Content-Type: text/plain
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Don't edit and sign these by hand, edit and run generate_generic_permissions.pl! -->
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+  <permissions>
+    <grant name="TheGrant">
+      <subject_name>C=BR,ST=SP,L=SaoPaulo,O=UATM,CN=fleetOperator</subject_name>
+      <validity>
+        <not_before>2024-01-01T00:00:00Z</not_before>
+        <not_after>2025-12-31T23:59:59Z</not_after>
+      </validity>
+      <allow_rule>
+        <domains>
+          <id>0</id>
+        </domains>
+        <publish>
+          <topics>
+            <topic>fleetDirectives</topic>
+          </topics>
+        </publish>
+        <subscribe>
+          <topics>
+            <topic>vehicleState</topic>
+            <topic>flightStatus</topic>
+          </topics>
+        </subscribe>
+      </allow_rule>
+      <default>DENY</default>
+    </grant>
+  </permissions>
+</dds>
+
+------6F545C4D40FE23C919D49A1C8ECD454E
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+
+MIIGJwYJKoZIhvcNAQcCoIIGGDCCBhQCAQExDzANBglghkgBZQMEAgEFADALBgkq
+hkiG9w0BBwGgggNyMIIDbjCCAlagAwIBAgIUFp99P39nY9bbfyWvegSaow3pcsQw
+DQYJKoZIhvcNAQELBQAwTzELMAkGA1UEBhMCQlIxCzAJBgNVBAgMAlNQMREwDwYD
+VQQHDAhTYW9QYXVsbzENMAsGA1UECgwEVUFUTTERMA8GA1UECwwIUmVzZWFyY2gw
+HhcNMjYwMjI4MTYwMTQyWhcNMzYwMjI2MTYwMTQyWjBPMQswCQYDVQQGEwJCUjEL
+MAkGA1UECAwCU1AxETAPBgNVBAcMCFNhb1BhdWxvMQ0wCwYDVQQKDARVQVRNMREw
+DwYDVQQLDAhSZXNlYXJjaDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+AMJsvFfyt+0i1km0stGtfRQAQXX3YBhIrpYSHLqNQEXXoDPTXYNGud5gUsYoawKP
+HVwH1PDFUVF2WARYDof4ZgnK46HdoHhLh2mfr6BQ1yIBSwAGiQqsT7F4NvzhFY+W
+7e2klJEqKb4MB03RxbMLLovf9ghdCoPeamD4naj71I8RuzQoId0y+GdJe6zCwPlx
+UYB1hWjj12xHL0C4EgeReu2mt2YHTvEHrJ7daEPBTCv5cWGVU1J7gDwI+ZXBS+s0
+OKT8mmdA9T5Bbkdd06e2qNp3qFWIHJHLRgsRwylMdlNmwjqblGLfGCM9DeeSUqS5
+5C8JtiHJfHrjfpAzhj3FIb0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNV
+HQ8BAf8EBAMCAYYwHQYDVR0OBBYEFBpT2MF1sil7yPQUV4DRlqgTOJ6qMA0GCSqG
+SIb3DQEBCwUAA4IBAQBLYe1P8jRVFAZckX/G04uOJNtCwU0gvFWWnGEg6EtCdVrY
+Ep1eNLp1CKJHWLCqS4mNYlWUQ120XP6DNNodRNZuat2RqwSbe8+4XFS0B8a7oX7D
+7+eUJIhqFQqlAW4AoaB/aPFG/mZw2wEzp4Kaxvr3yUrWdVRCw4zTxwMzvTUBHZ2+
+lTEPrWNF9fwHqBKHwZgP6cVCocYNZuZfdpbapRAW5xbCPYsMeabF/zjIjqJXNJXE
+cyObsvITVlRFDQmQrLYzFlrYiouSwNfyTct5aQp3H/lrxR4zvTk5eO5qivFWQk9S
+wuwLMxN9lXeC9r7JbiFOGgnnOL4MM4Tly+zWMtVXMYICeTCCAnUCAQEwZzBPMQsw
+CQYDVQQGEwJCUjELMAkGA1UECAwCU1AxETAPBgNVBAcMCFNhb1BhdWxvMQ0wCwYD
+VQQKDARVQVRNMREwDwYDVQQLDAhSZXNlYXJjaAIUFp99P39nY9bbfyWvegSaow3p
+csQwDQYJYIZIAWUDBAIBBQCggeQwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
+BgkqhkiG9w0BCQUxDxcNMjYwMjI4MjA0MzMzWjAvBgkqhkiG9w0BCQQxIgQgD73/
+FhkR2j4IOLkjcfB7kLBfx74VR3JTirLpk/HIjwcweQYJKoZIhvcNAQkPMWwwajAL
+BglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0D
+BzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwICAUAwBwYFKw4DAgcwDQYIKoZI
+hvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEARmJQYs3FBuCQzlruqd0I9I/tiPVS
+nvZXWQ7JCHB9TTnXjMOB1d445wtkDLRvIXsr72RABr+nKswpUFtXR7qtgn7XRD0N
+Nd6VGz02I9E7Z/wikg4mt2Ktmrij1luMAgvKeKma4hBVe3XrrpmfrNVxkqIyZgF6
+sVAn9PdJFRaDy6eYMY4o/8X9ckJnk9MBeEatluJNgTmJSMx7VxhGt+hfihZ4FzzZ
+M4pJkZ1V0Fczp0U45JtMOfPnEwzDCEgXREiO3vu5L4abuc6fLzOJiRLb/RBRCfcU
+FGCw9CfPAn3zidebgqYYD7VGqWdiq9vgwXtp3rW28JE+sIlkfJOGgbeESg==
+
+------6F545C4D40FE23C919D49A1C8ECD454E--
+

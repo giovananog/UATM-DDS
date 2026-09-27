@@ -1,0 +1,198 @@
+MIME-Version: 1.0
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----527EEC57A516FFA3B02D476E4C309C8A"
+
+This is an S/MIME signed message
+
+------527EEC57A516FFA3B02D476E4C309C8A
+Content-Type: text/plain
+
+<?xml version="1.0" encoding="UTF-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+  <domain_access_rules>
+    <domain_rule>
+      <domains>
+        <id>0</id>
+      </domains>
+      <allow_unauthenticated_participants>false</allow_unauthenticated_participants>
+      <enable_join_access_control>false</enable_join_access_control>
+      <discovery_protection_kind>NONE</discovery_protection_kind>
+      <liveliness_protection_kind>NONE</liveliness_protection_kind>
+      <rtps_protection_kind>NONE</rtps_protection_kind>
+
+      <topic_access_rules>
+        <!--
+          vehicleState:
+          - Protected for read and write access.
+          - Use regular unsecured discovery
+        -->
+        <topic_rule>
+          <topic_expression>vehicleState</topic_expression>
+          <enable_read_access_control>true</enable_read_access_control>
+          <enable_write_access_control>true</enable_write_access_control>
+          <enable_discovery_protection>false</enable_discovery_protection>
+          <enable_liveliness_protection>false</enable_liveliness_protection>
+          <metadata_protection_kind>NONE</metadata_protection_kind>
+          <data_protection_kind>NONE</data_protection_kind>
+        </topic_rule>
+
+        <!--
+          tacticalCommand:
+          - Protected for read and write access.
+          - Use regular unsecured discovery
+        -->
+        <topic_rule>
+          <topic_expression>tacticalCommand</topic_expression>
+          <enable_read_access_control>true</enable_read_access_control>
+          <enable_write_access_control>true</enable_write_access_control>
+          <enable_discovery_protection>false</enable_discovery_protection>
+          <enable_liveliness_protection>false</enable_liveliness_protection>
+          <metadata_protection_kind>NONE</metadata_protection_kind>
+          <data_protection_kind>NONE</data_protection_kind>
+        </topic_rule>
+
+        <!--
+          flightStatus:
+          - Protected for read and write access.
+          - Use regular unsecured discovery
+        -->
+        <topic_rule>
+          <topic_expression>flightStatus</topic_expression>
+          <enable_read_access_control>true</enable_read_access_control>
+          <enable_write_access_control>true</enable_write_access_control>
+          <enable_discovery_protection>false</enable_discovery_protection>
+          <enable_liveliness_protection>false</enable_liveliness_protection>
+          <metadata_protection_kind>NONE</metadata_protection_kind>
+          <data_protection_kind>NONE</data_protection_kind>
+        </topic_rule>
+
+        <!--
+          airspaceAlert:
+          - Protected for read and write access.
+          - Use regular unsecured discovery
+        -->
+        <topic_rule>
+          <topic_expression>airspaceAlert</topic_expression>
+          <enable_read_access_control>true</enable_read_access_control>
+          <enable_write_access_control>true</enable_write_access_control>
+          <enable_discovery_protection>false</enable_discovery_protection>
+          <enable_liveliness_protection>false</enable_liveliness_protection>
+          <metadata_protection_kind>NONE</metadata_protection_kind>
+          <data_protection_kind>NONE</data_protection_kind>
+        </topic_rule>
+
+        <!--
+          fleetDirectives:
+          - Protected for read and write access.
+          - Use regular unsecured discovery
+        -->
+        <topic_rule>
+          <topic_expression>fleetDirectives</topic_expression>
+          <enable_read_access_control>true</enable_read_access_control>
+          <enable_write_access_control>true</enable_write_access_control>
+          <enable_discovery_protection>false</enable_discovery_protection>
+          <enable_liveliness_protection>false</enable_liveliness_protection>
+          <metadata_protection_kind>NONE</metadata_protection_kind>
+          <data_protection_kind>NONE</data_protection_kind>
+        </topic_rule>
+
+        <!--
+          weatherUpdate:
+          - Protected for read and write access.
+          - Use regular unsecured discovery
+        -->
+        <topic_rule>
+          <topic_expression>weatherUpdate</topic_expression>
+          <enable_read_access_control>true</enable_read_access_control>
+          <enable_write_access_control>true</enable_write_access_control>
+          <enable_discovery_protection>false</enable_discovery_protection>
+          <enable_liveliness_protection>false</enable_liveliness_protection>
+          <metadata_protection_kind>NONE</metadata_protection_kind>
+          <data_protection_kind>NONE</data_protection_kind>
+        </topic_rule>
+
+        <!--
+          tolPadStatus:
+          - Protected for read and write access.
+          - Use regular unsecured discovery
+        -->
+        <topic_rule>
+          <topic_expression>tolPadStatus</topic_expression>
+          <enable_read_access_control>true</enable_read_access_control>
+          <enable_write_access_control>true</enable_write_access_control>
+          <enable_discovery_protection>false</enable_discovery_protection>
+          <enable_liveliness_protection>false</enable_liveliness_protection>
+          <metadata_protection_kind>NONE</metadata_protection_kind>
+          <data_protection_kind>NONE</data_protection_kind>
+        </topic_rule>
+
+        <!--
+          trafficFlowsInfo:
+          - Protected for read and write access.
+          - Use regular unsecured discovery
+        -->
+        <topic_rule>
+          <topic_expression>trafficFlowsInfo</topic_expression>
+          <enable_read_access_control>true</enable_read_access_control>
+          <enable_write_access_control>true</enable_write_access_control>
+          <enable_discovery_protection>false</enable_discovery_protection>
+          <enable_liveliness_protection>false</enable_liveliness_protection>
+          <metadata_protection_kind>NONE</metadata_protection_kind>
+          <data_protection_kind>NONE</data_protection_kind>
+        </topic_rule>
+
+        <!-- Default -->
+        <topic_rule>
+          <topic_expression>*</topic_expression>
+          <enable_read_access_control>false</enable_read_access_control>
+          <enable_write_access_control>false</enable_write_access_control>
+          <enable_discovery_protection>false</enable_discovery_protection>
+          <enable_liveliness_protection>false</enable_liveliness_protection>
+          <metadata_protection_kind>NONE</metadata_protection_kind>
+          <data_protection_kind>NONE</data_protection_kind>
+        </topic_rule>
+        
+      </topic_access_rules>
+    </domain_rule>
+  </domain_access_rules>
+</dds>
+------527EEC57A516FFA3B02D476E4C309C8A
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+
+MIIGJwYJKoZIhvcNAQcCoIIGGDCCBhQCAQExDzANBglghkgBZQMEAgEFADALBgkq
+hkiG9w0BBwGgggNyMIIDbjCCAlagAwIBAgIUFp99P39nY9bbfyWvegSaow3pcsQw
+DQYJKoZIhvcNAQELBQAwTzELMAkGA1UEBhMCQlIxCzAJBgNVBAgMAlNQMREwDwYD
+VQQHDAhTYW9QYXVsbzENMAsGA1UECgwEVUFUTTERMA8GA1UECwwIUmVzZWFyY2gw
+HhcNMjYwMjI4MTYwMTQyWhcNMzYwMjI2MTYwMTQyWjBPMQswCQYDVQQGEwJCUjEL
+MAkGA1UECAwCU1AxETAPBgNVBAcMCFNhb1BhdWxvMQ0wCwYDVQQKDARVQVRNMREw
+DwYDVQQLDAhSZXNlYXJjaDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+AMJsvFfyt+0i1km0stGtfRQAQXX3YBhIrpYSHLqNQEXXoDPTXYNGud5gUsYoawKP
+HVwH1PDFUVF2WARYDof4ZgnK46HdoHhLh2mfr6BQ1yIBSwAGiQqsT7F4NvzhFY+W
+7e2klJEqKb4MB03RxbMLLovf9ghdCoPeamD4naj71I8RuzQoId0y+GdJe6zCwPlx
+UYB1hWjj12xHL0C4EgeReu2mt2YHTvEHrJ7daEPBTCv5cWGVU1J7gDwI+ZXBS+s0
+OKT8mmdA9T5Bbkdd06e2qNp3qFWIHJHLRgsRwylMdlNmwjqblGLfGCM9DeeSUqS5
+5C8JtiHJfHrjfpAzhj3FIb0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNV
+HQ8BAf8EBAMCAYYwHQYDVR0OBBYEFBpT2MF1sil7yPQUV4DRlqgTOJ6qMA0GCSqG
+SIb3DQEBCwUAA4IBAQBLYe1P8jRVFAZckX/G04uOJNtCwU0gvFWWnGEg6EtCdVrY
+Ep1eNLp1CKJHWLCqS4mNYlWUQ120XP6DNNodRNZuat2RqwSbe8+4XFS0B8a7oX7D
+7+eUJIhqFQqlAW4AoaB/aPFG/mZw2wEzp4Kaxvr3yUrWdVRCw4zTxwMzvTUBHZ2+
+lTEPrWNF9fwHqBKHwZgP6cVCocYNZuZfdpbapRAW5xbCPYsMeabF/zjIjqJXNJXE
+cyObsvITVlRFDQmQrLYzFlrYiouSwNfyTct5aQp3H/lrxR4zvTk5eO5qivFWQk9S
+wuwLMxN9lXeC9r7JbiFOGgnnOL4MM4Tly+zWMtVXMYICeTCCAnUCAQEwZzBPMQsw
+CQYDVQQGEwJCUjELMAkGA1UECAwCU1AxETAPBgNVBAcMCFNhb1BhdWxvMQ0wCwYD
+VQQKDARVQVRNMREwDwYDVQQLDAhSZXNlYXJjaAIUFp99P39nY9bbfyWvegSaow3p
+csQwDQYJYIZIAWUDBAIBBQCggeQwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
+BgkqhkiG9w0BCQUxDxcNMjYwMjI4MjA0MDEyWjAvBgkqhkiG9w0BCQQxIgQgM5P1
+75i8rpQx/8BwZZEZGeLmLU8ufauJH9Tpr0TTF7sweQYJKoZIhvcNAQkPMWwwajAL
+BglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0D
+BzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwICAUAwBwYFKw4DAgcwDQYIKoZI
+hvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEAJe8A72AY1k1WpwWqIeWpI+tJ61av
+QGKDNDbYJP46l3ftx0trWo5pAojVPqugsq6ilT4D4nYbTCMi8NL7n8NDlgpj1/Ea
+MAFRybd+NPw0C29OER3Kbpp8vGmeQWB6f9YFGd+5XHgKR1GEeZaED3FwdbWK1MoT
+094gCq5bGKbv4LEyY2ZShm/m3UFQXEGOE4eeyvLlhoW99qp5OtBssy93rC04o0CS
+vB1whIWZ+4Er8/BibvjQ/wRUpDCCSh2PlgJTY7FKkw0ewUqonrbvfollLFiqYIMS
+/LvWn+RFEB0vCYW+CeCgBieFPEtJaVIcMOooxAGWXPtuzjS4pQEQG+dL9g==
+
+------527EEC57A516FFA3B02D476E4C309C8A--
+

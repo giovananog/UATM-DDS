@@ -1,0 +1,151 @@
+project(uatm) : dcps, uatm_paths {
+  libout = .
+  sharedname = uatm
+  includes += $(DDS_ROOT)/tools/modeling/codegen
+
+  idlflags      += -Wb,export_macro=uatm_Export -Wb,export_include=uatm_export.h
+  dynamicflags   = UATM_BUILD_DLL
+  dcps_ts_flags += -Wb,export_macro=uatm_Export
+  prebuild      += perl $(DDS_ROOT)/tools/scripts/expfile.pl uatm
+  libpaths += $(DDS_ROOT)/lib
+
+
+  TypeSupport_Files {
+    uatm.idl
+  }
+
+  IDL_Files {
+    uatm.idl
+  }
+
+  Header_Files {
+    uatm_T.h
+    uatmTraits.h
+  }
+
+  Source_Files {
+    uatmTraits.cpp
+  }
+
+  Template_Files {
+    uatm_T.cpp
+  }
+}
+
+  project(*xmlPublisher1) : dcpsexe, all_dcps_transports, dds_model, opendds_security {
+  exename   = publisher1
+  after    += uatm
+  libs     += uatm
+  libs += OpenDDS_Security
+  libpaths += model
+
+  Source_Files {
+    ../evtolVehicleDP/Publisher/evtolVehiclePB.cpp
+  }
+}
+
+project(*xmlPublisher2) : dcpsexe, all_dcps_transports, dds_model, opendds_security {
+  exename   = publisher2
+  after    += uatm
+  libs     += uatm
+  libs += OpenDDS_Security
+  libpaths += model
+
+  Source_Files {
+    ../fleetOperatorDP/Publisher/fleetOperatorPB.cpp
+  }
+}
+
+project(*xmlPublisher3) : dcpsexe, all_dcps_transports, dds_model, opendds_security {
+  exename   = publisher3
+  after    += uatm
+  libs     += uatm
+  libs += OpenDDS_Security
+  libpaths += model
+
+  Source_Files {
+    ../skyportOperatorDP/Publisher/skyportOperatorPB.cpp
+  }
+}
+
+project(*xmlPublisher4) : dcpsexe, all_dcps_transports, dds_model, opendds_security {
+  exename   = publisher4
+  after    += uatm
+  libs     += uatm
+  libs += OpenDDS_Security
+  libpaths += model
+
+  Source_Files {
+    ../uaspDP/Publisher/uaspPB.cpp
+  }
+}
+
+project(*xmlPublisher5) : dcpsexe, all_dcps_transports, dds_model, opendds_security {
+  exename   = publisher5
+  after    += uatm
+  libs     += uatm
+  libs += OpenDDS_Security
+  libpaths += model
+
+  Source_Files {
+    ../weatherDP/Publisher/weatherPB.cpp
+  }
+}
+
+project(*xmlSubscriber1) : dcpsexe, all_dcps_transports, dds_model, opendds_security {
+  exename   = subscriber1
+  after    += uatm
+  libs     += uatm
+  libs += OpenDDS_Security
+  libpaths += model
+
+  Source_Files {
+    ../evtolVehicleDP/Subscriber/evtolVehicleSB.cpp
+    ../evtolVehicleDP/Subscriber/ReaderListenerAA.cpp
+    ../evtolVehicleDP/Subscriber/ReaderListenerFD.cpp
+    ../evtolVehicleDP/Subscriber/ReaderListenerTC.cpp
+  }
+}
+
+project(*xmlSubscriber2) : dcpsexe, all_dcps_transports, dds_model, opendds_security {
+  exename   = subscriber2
+  after    += uatm
+  libs     += uatm
+  libs += OpenDDS_Security
+  libpaths += model
+
+  Source_Files {
+    ../fleetOperatorDP/Subscriber/fleetOperatorSB.cpp
+    ../fleetOperatorDP/Subscriber/ReaderListenerFS.cpp
+    ../fleetOperatorDP/Subscriber/ReaderListenerVS.cpp
+  }
+}
+
+project(*xmlSubscriber3) : dcpsexe, all_dcps_transports, dds_model, opendds_security {
+  exename   = subscriber3
+  after    += uatm
+  libs     += uatm
+  libs += OpenDDS_Security
+  libpaths += model
+
+  Source_Files {
+    ../skyportOperatorDP/Subscriber/skyportOperatorSB.cpp
+    ../skyportOperatorDP/Subscriber/ReaderListenerTC.cpp
+    ../skyportOperatorDP/Subscriber/ReaderListenerVS.cpp
+  }
+}
+
+project(*xmlSubscriber4) : dcpsexe, all_dcps_transports, dds_model, opendds_security {
+  exename   = subscriber4
+  after    += uatm
+  libs     += uatm
+  libs += OpenDDS_Security
+  libpaths += model
+
+  Source_Files {
+    ../uaspDP/Subscriber/uaspSB.cpp
+    ../uaspDP/Subscriber/ReaderListenerTF.cpp
+    ../uaspDP/Subscriber/ReaderListenerVS.cpp
+    ../uaspDP/Subscriber/ReaderListenerWU.cpp
+  }
+}

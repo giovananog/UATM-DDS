@@ -1,0 +1,4 @@
+project {
+  libs += uatm
+  after += uatm
+}

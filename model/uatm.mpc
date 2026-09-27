@@ -1,0 +1,34 @@
+project(uatm) : dcps, uatm_paths {
+  libout = .
+  sharedname = uatm
+  includes += $(DDS_ROOT)/tools/modeling/codegen
+
+  idlflags      += -Wb,export_macro=uatm_Export -Wb,export_include=uatm_export.h
+  dynamicflags   = UATM_BUILD_DLL
+  dcps_ts_flags += -Wb,export_macro=uatm_Export
+  prebuild      += perl $(DDS_ROOT)/tools/scripts/expfile.pl uatm
+  libpaths += $(DDS_ROOT)/lib
+
+  TypeSupport_Files {
+    uatm.idl
+  }
+
+  IDL_Files {
+    uatm.idl
+  }
+
+  Header_Files {
+    uatm_T.h
+    uatmTraits.h
+  }
+
+  Source_Files {
+    uatmTraits.cpp
+  }
+
+  Template_Files {
+    uatm_T.cpp
+  }
+}
+
+

@@ -1,0 +1,12 @@
+[ req ]
+distinguished_name = req_distinguished_name
+prompt = no
+[ req_distinguished_name ]
+C = BR
+ST = SP
+L = SaoPaulo
+O = UATM
+OU = Research
+[ v3_ca ]
+basicConstraints = critical,CA:TRUE
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
